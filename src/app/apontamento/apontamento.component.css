@@ -1,0 +1,264 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .input-inline {
+      flex-direction: column; /* Quebra input e botão em coluna no mobile */
+      align-items: stretch;
+    }
+  
+    .icon-button, .icon {
+      width: 100%; /* Botões expandem no mobile */
+      margin-left: 0;
+      margin-top: 8px;
+    }
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Para incluir padding no tamanho total */
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .input-field {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+
+  .row-inline {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+  
+  .row-inline .input-field {
+    flex: 1 1 45%;
+    min-width: 200px;
+  }
+  
+  @media (max-width: 600px) {
+    .row-inline {
+      flex-direction: column;
+    }
+  
+    .row-inline .input-field {
+      width: 100%;
+    }
+  }
+  
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"] {
+    width: auto;
+    display: flex;
+    align-content: normal;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+
+select {
+    display: flex;
+    width: auto;
+  min-width: 150px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .settings-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .config-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .config-switch label {
+    font-weight: bold;
+  }
+  
+  .button-row {
+    display: flex;
+    gap: 10px; /* espaço entre os botões */
+    justify-content: center; /* opcional, centraliza */
+    margin-top: 20px;
+  }
+  
+  .button-row .button-large {
+    flex: 1 1 auto;
+  }
+  
+
+  .switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .switch label {
+    font-weight: bold;
+  }
+  
+  .switch input {
+    width: 50px;
+    height: 25px;
+  }
+  
+  .modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .modal-content table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .modal-content th, .modal-content td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .button-large {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button-large.red {
+    background-color: #f44336;
+  }
+  
+  .button-large:hover {
+    opacity: 0.9;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 18px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .grid {
+    margin-top: 20px;
+  }
+  
+  .grid th, .grid td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .quantity-total {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .input-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .input-inline input {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  
+  .icon-button {
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+  
