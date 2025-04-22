@@ -115,17 +115,19 @@
       <button *ngIf="!usaTurno" type="button" class="icon-button" (click)="parar()">Parar</button>
     </div>
   </div>
-    
-  <div class="input-field" *ngIf="usaParada">
-    <label for="motivoDeParada">Motivo de parada</label>
+
+  <div class="input-field">
     <div class="input-inline">
-      <select id="motivoDeParada" [(ngModel)]="motivoDeParada">
-        <option value="ALM">Pausa para almoço</option>
-        <option value="EXP">Término do expediente</option>
-        <option value="FIM_ET">Fim desta ET na operação</option>
-        <option value="FIM_OP">Fim da operação</option>
-        <option value="OUT">Outros motivos</option>
-      </select>
+      <div *ngIf="usaParada" class="motivo-parada">
+        <label for="motivoDeParada">Motivo de parada</label>
+        <select id="motivoDeParada" [(ngModel)]="motivoDeParada">
+          <option value="ALM">Pausa para almoço</option>
+          <option value="EXP">Término do expediente</option>
+          <option value="FIM_ET">Fim desta ET na operação</option>
+          <option value="FIM_OP">Fim da operação</option>
+          <option value="OUT">Outros motivos</option>
+        </select>
+      </div>
   
       <label class="checkbox-inline">
         <input type="checkbox" [(ngModel)]="concluirOperacao">
