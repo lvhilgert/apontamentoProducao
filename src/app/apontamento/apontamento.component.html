@@ -28,7 +28,7 @@
 <div class="row-inline" *ngIf="!criarNovaOrdem">
   
     <div class="input-field">
-      <label for="ordemProducao">Ordem de Produção</label>
+      <label for="ordemProducao">Ordem de produção</label>
       <div class="input-inline">
         <input type="text" id="ordemProducao" [(ngModel)]="ordemProducao" placeholder="Digite o número da OP">
         <button type="button" class="icon-button" (click)="openOPModal()">🔍</button>
@@ -118,7 +118,7 @@
     
   <!-- Motivo de Parada -->
 <div class="input-field" *ngIf="usaParada">
-    <label for="motivoDeParada">Motivo de Parada</label>
+    <label for="motivoDeParada">Motivo de parada</label>
     <select id="motivoDeParada" [(ngModel)]="motivoDeParada">
       <option value="ALM">Pausa para almoço</option>
       <option value="EXP">Término do expediente</option>
@@ -130,7 +130,7 @@
   
     <!-- Quantidade apontada -->
     <div class="input-field">
-        <label for="quantidadeApontada">Quantidade Apontada</label>
+        <label for="quantidadeApontada">Quantidade apontada</label>
         <div class="input-inline">
           <input type="number" id="quantidadeApontada" [(ngModel)]="quantidadeApontada">
           <button type="button" class="icon-button" (click)="openQuantityModal()">📊</button>
@@ -139,7 +139,7 @@
     
     <!-- Quantidade dupla checagem -->
     <div class="input-field" *ngIf="usaDuplaChecagem">
-        <label for="quantidadeDuplaChecagem">Quantidade Dupla Checagem</label>
+        <label for="quantidadeDuplaChecagem">Quantidade dupla checagem</label>
         <div class="input-inline">
         <input type="number" id="quantidadeDuplaChecagem" [(ngModel)]="duplaChecagem">
         <button type="button" class="icon-button" (click)="openDuplaChecagemModal()">📊</button>
@@ -160,7 +160,7 @@
   <!-- Modal Item -->
   <div class="modal" *ngIf="showItemModal">
     <div class="modal-content">
-      <h2>Escolha um Item</h2>
+      <h2>Escolha um item</h2>
       <table>
         <tr><th>Código</th><th>Descrição</th></tr>
         <tr *ngFor="let it of itens" (click)="selectItem(it.descricao)">
@@ -174,9 +174,9 @@
     <!-- Modal OP -->
     <div class="modal" *ngIf="showOpModal">
       <div class="modal-content">
-        <h2>Escolha uma Ordem de Produção</h2>
+        <h2>Escolha uma ordem de produção</h2>
         <table>
-          <tr><th>Ordem de Produção</th></tr>
+          <tr><th>Ordem de produção</th></tr>
           <tr *ngFor="let op of ordens" (click)="selectOP(op)"><td>{{ op }}</td></tr>
         </table>
         <button class="button-large red" (click)="closeModal()">Fechar</button>
@@ -214,9 +214,9 @@
       <!-- Modal Dupla Checagem -->
 <div class="modal" *ngIf="showDuplaChecagemModal">
     <div class="modal-content">
-      <h2>Quantidade Total Dupla Checagem</h2>
+      <h2>Quantidade total dupla checagem</h2>
   
-      <label>Quantidade Total</label>
+      <label>Quantidade total</label>
       <input type="text" [value]="quantidadeTotalDuplaChecagem" disabled>
   
       <table class="grid">
@@ -243,8 +243,8 @@
     <!-- Modal Quantidade -->
     <div class="modal" *ngIf="showQuantidadeModal">
       <div class="modal-content">
-        <h2>Quantidade Total Apontada</h2>
-        <label>Quantidade Total</label>
+        <h2>Quantidade total apontada</h2>
+        <label>Quantidade total</label>
         <input type="text" [value]="quantidadeTotal" disabled>
         <table class="grid">
           <thead>
@@ -257,7 +257,7 @@
             </tr>
           </tbody>
         </table>
-        <button class="button-large" (click)="incluirLeitura()">Incluir Leitura</button>
+        <button class="button-large" (click)="incluirLeitura()">Incluir leitura</button>
         <button class="button-large red" (click)="finalizarLeitura()">FINALIZAR LEITURA</button>
       </div>
     </div>
