@@ -199,6 +199,14 @@ select {
   .button-large.red {
     background-color: #f44336;
   }
+
+  .button-large.gray {
+    background-color: #b6b6b6;
+  }
+
+  .button-large.blue {
+    background-color: #3f84df;
+  }
   
   .button-large:hover {
     opacity: 0.9;
