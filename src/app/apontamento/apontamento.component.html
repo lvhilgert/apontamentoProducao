@@ -78,9 +78,15 @@
         </select>
     </div>
       
-
+    <div class="config-switch">
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="showInformarInicio">
+          <span class="slider round"></span>
+          🕒 Informar início
+        </label>
+      </div>
      <!-- Início -->
-     <div class="input-field" *ngIf="mostrarInicioFim">
+     <div class="input-field" *ngIf="mostrarInicioFim && showInformarInicio">
         <label>Início</label>
         <div class="input-inline">
           <input type="date" [(ngModel)]="dataInicio">
@@ -89,8 +95,16 @@
         </div>
     </div>
 
+    <div class="config-switch">
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="showInformarFim">
+          <span class="slider round"></span>
+          🕒 Informar fim
+        </label>
+    </div>
+      
   <!-- Fim -->
-  <div class="input-field" *ngIf="mostrarInicioFim">
+  <div class="input-field" *ngIf="mostrarInicioFim && showInformarFim">
     <label>Fim</label>
     <div class="input-inline">
       <input type="date" [(ngModel)]="dataFim">

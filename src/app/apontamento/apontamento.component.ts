@@ -32,6 +32,8 @@ export class ApontamentoComponent {
   showItemModal = false;
   showQuantidadeModal = false;
   showDuplaChecagemModal: boolean = false;
+  showInformarInicio: boolean = false;
+  showInformarFim: boolean = false;
 
   //Motivos de parada
   motivoDeParada: string = 'FIM_OP';
