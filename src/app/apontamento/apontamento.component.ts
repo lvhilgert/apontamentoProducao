@@ -25,6 +25,7 @@ export class ApontamentoComponent {
   horaInicio: string = '';
   dataFim: string = '';
   horaFim: string = '';
+  concluirOperacao: boolean = false;
 
   showConfig: boolean = false;
   showMostraInicioFim = false;

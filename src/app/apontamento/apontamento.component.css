@@ -338,4 +338,24 @@ select {
   .slider.round::before {
     border-radius: 50%;
   }
-  
+
+  .checkbox-inline {
+  display: flex;
+  align-items: center;
+  /*background-color: #f0f0f0; /* Fundo suave pra destacar */
+  /*border: 1px solid #ccc;*/
+  border-radius: 8px;
+  padding: 8px 12px;
+  gap: 10px;
+  margin-left: 10px; /* Distância entre o select e o checkbox */
+  height: 42px; /* Mesmo que os inputs normais */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.checkbox-inline input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}

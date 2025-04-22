@@ -116,17 +116,24 @@
     </div>
   </div>
     
-  <!-- Motivo de Parada -->
-<div class="input-field" *ngIf="usaParada">
+  <div class="input-field" *ngIf="usaParada">
     <label for="motivoDeParada">Motivo de parada</label>
-    <select id="motivoDeParada" [(ngModel)]="motivoDeParada">
-      <option value="ALM">Pausa para almoço</option>
-      <option value="EXP">Término do expediente</option>
-      <option value="FIM_ET">Fim desta ET na operação</option>
-      <option value="FIM_OP">Fim da operação</option>
-      <option value="OUT">Outros motivos</option>
-    </select>
+    <div class="input-inline">
+      <select id="motivoDeParada" [(ngModel)]="motivoDeParada">
+        <option value="ALM">Pausa para almoço</option>
+        <option value="EXP">Término do expediente</option>
+        <option value="FIM_ET">Fim desta ET na operação</option>
+        <option value="FIM_OP">Fim da operação</option>
+        <option value="OUT">Outros motivos</option>
+      </select>
+  
+      <label class="checkbox-inline">
+        <input type="checkbox" [(ngModel)]="concluirOperacao">
+        Concluir operação
+      </label>
+    </div>
   </div>
+  
   
     <!-- Quantidade apontada -->
     <div class="input-field">
