@@ -5,7 +5,7 @@
     <h1>Novo apontamento de operação</h1>
   
     <!-- Criar nova ordem de produção -->
-<div class="switch">
+<div class="switch" *ngIf="usaCriarOp">
     <label for="createOrder">Criar nova ordem de produção</label>
     <input type="checkbox" id="createOrder" [(ngModel)]="criarNovaOrdem">
   </div>
@@ -168,6 +168,10 @@
     <div class="modal" *ngIf="showConfig">
         <div class="modal-content">
           <h2>Configurações</h2>
+          <div class="config-switch">
+            <label>Usar criar OP no apontamento de produção.</label>
+            <input type="checkbox" [(ngModel)]="usaCriarOp">
+          </div>
           <div class="config-switch">
             <label>Usar turno.</label>
             <input type="checkbox" [(ngModel)]="usaTurno">

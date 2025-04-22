@@ -42,7 +42,8 @@ export class ApontamentoComponent {
   mostrarInicioFim = true;
   usaDuplaChecagem = false;
   
-  
+  //Usa criarção de OP no apontamento
+  usaCriarOp = false;
 
   quantidadeTotal = 0;
   leituras: number[] = [];
