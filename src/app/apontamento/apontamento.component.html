@@ -150,7 +150,7 @@
     <!-- Botões -->
     <div class="button-row">
         <button *ngIf="!horaInicio" class="button-large blue" (click)="iniciar()">Iniciar</button>
-        <button *ngIf="!horaFim" class="button-large red" (click)="parar()">Parar</button>
+        <button *ngIf="!horaFim && horaInicio" class="button-large red" (click)="parar()">Parar</button>
         <button class="button-large" (click)="finalizarApontamento()">Salvar</button>
         <button class="button-large" (click)="finalizarApontamento()">Salvar e novo</button>
         <button class="button-large gray" (click)="limparDados()">Cancelar</button>
