@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./apontamento.component.css']
 })
 export class ApontamentoComponent {
-  criarNovaOrdem = true;
+  criarNovaOrdem = false;
   ordemProducao = '';
   operacao: string = '10';
   turno = 'MANHÃ';
