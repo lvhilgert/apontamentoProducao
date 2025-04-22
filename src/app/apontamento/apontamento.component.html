@@ -5,10 +5,13 @@
     <h1>Novo apontamento de operação</h1>
   
     <!-- Criar nova ordem de produção -->
-<div class="switch" *ngIf="usaCriarOp">
-    <label for="createOrder">Criar nova ordem de produção</label>
-    <input type="checkbox" id="createOrder" [(ngModel)]="criarNovaOrdem">
-  </div>
+    <div class="config-switch">
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="criarNovaOrdem">
+          <span class="slider round"></span>
+          Criar nova ordem de produção
+        </label>
+      </div>
 
   <!-- Item -->
   <div class="input-field" *ngIf="usaCriarOp && criarNovaOrdem">
