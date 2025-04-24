@@ -48,6 +48,12 @@ export class ApontamentoComponent {
   //Usa criarção de OP no apontamento
   usaCriarOp = false;
 
+  //Cronômetro:
+  cronometroAtivo = false;
+tempoDecorrido = 0; // em segundos
+intervalo: any;
+duracaoManual = '00:00:00';
+
   quantidadeTotal = 0;
   leituras: number[] = [];
   leiturasDuplaChecagem: number[] = [];
@@ -189,5 +195,49 @@ finalizarLeituraDuplaChecagem() {
 closeModalDuplaChecagem() {
   this.showDuplaChecagemModal = false;
 }
+
+get tempoFormatado(): string {
+  const horas = Math.floor(this.tempoDecorrido / 3600).toString().padStart(2, '0');
+  const minutos = Math.floor((this.tempoDecorrido % 3600) / 60).toString().padStart(2, '0');
+  const segundos = (this.tempoDecorrido % 60).toString().padStart(2, '0');
+  return `${horas}:${minutos}:${segundos}`;
+}
+
+alternarCronometro() {
+  if (this.cronometroAtivo) {
+    clearInterval(this.intervalo);
+    this.cronometroAtivo = false;
+    this.definirInicioEFim();
+  } else {
+    this.tempoDecorrido = 0;
+    this.cronometroAtivo = true;
+    this.intervalo = setInterval(() => {
+      this.tempoDecorrido++;
+      this.duracaoManual = this.tempoFormatado;
+    }, 1000);
+  }
+}
+
+atualizarDuracaoManual() {
+  const partes = this.duracaoManual.split(':');
+  if (partes.length === 3) {
+    const horas = parseInt(partes[0], 10) || 0;
+    const minutos = parseInt(partes[1], 10) || 0;
+    const segundos = parseInt(partes[2], 10) || 0;
+    this.tempoDecorrido = horas * 3600 + minutos * 60 + segundos;
+    this.definirInicioEFim();
+  }
+}
+
+definirInicioEFim() {
+  const agora = new Date();
+  this.dataFim = agora.toISOString().split('T')[0];
+  this.horaFim = agora.toTimeString().substring(0, 8);
+
+  const inicio = new Date(agora.getTime() - this.tempoDecorrido * 1000);
+  this.dataInicio = inicio.toISOString().split('T')[0];
+  this.horaInicio = inicio.toTimeString().substring(0, 8);
+}
+
 
 }
