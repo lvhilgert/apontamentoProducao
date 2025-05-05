@@ -29,7 +29,7 @@
     
     <div class="input-field">
       <label for="operador">Operador</label>
-      <select id="operador" [(ngModel)]="operador">
+      <select [disabled]="apontamentoIniciado" id="operador" [(ngModel)]="operador">
         <option>João</option>
         <option>Maria</option>
         <option>Carlos</option>
@@ -40,7 +40,7 @@
   
     <div class="input-field">
       <label for="estacaoDeTrabalho">Estação de trabalho</label>
-      <select id="estacaoDeTrabalho" [(ngModel)]="estacaoDeTrabalho">
+      <select [disabled]="apontamentoIniciado" id="estacaoDeTrabalho" [(ngModel)]="estacaoDeTrabalho">
         <option>MAQ1</option>
         <option>MAQ2</option>
         <option>MAQ3</option>
@@ -59,14 +59,14 @@
       <div class="input-field">
         <label for="ordemProducao">Ordem de produção</label>
         <div class="input-inline">
-          <input type="text" id="ordemProducao" [(ngModel)]="ordemProducao" placeholder="Digite o número da OP">
+          <input [disabled]="apontamentoIniciado" type="text" id="ordemProducao" [(ngModel)]="ordemProducao" placeholder="Digite o número da OP">
           <button type="button" class="icon-button" (click)="openOPModal()">🔍</button>
         </div>
       </div>
     
       <div class="input-field">
         <label for="operacao">Operação</label>
-        <select id="operacao" [(ngModel)]="operacao">
+        <select [disabled]="apontamentoIniciado" id="operacao" [(ngModel)]="operacao">
           <option value="10">10 - Cortar</option>
           <option value="20">20 - Lixar</option>
           <option value="30">30 - Embalar</option>
@@ -82,7 +82,7 @@
 <div class="section" *ngIf="usaTurno"> 
     <div class="input-field" *ngIf="usaTurno">
         <label for="turno">Turno</label>
-        <select id="turno" [(ngModel)]="turno" (change)="atualizarHoras()">
+        <select [disabled]="apontamentoIniciado" id="turno" [(ngModel)]="turno" (change)="atualizarHoras()">
           <option>MANHÃ</option>
           <option>TARDE</option>
           <option>NOITE</option>
