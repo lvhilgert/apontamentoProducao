@@ -104,8 +104,8 @@
       <div class="input-field" *ngIf="showInformarInicio || apontamentoIniciado">
         <label>Início</label>
         <div class="input-inline">
-          <input type="date" [(ngModel)]="dataInicio">
-          <input type="time" [(ngModel)]="horaInicio">
+          <input [disabled]="apontamentoIniciado" type="date" [(ngModel)]="dataInicio">
+          <input [disabled]="apontamentoIniciado" type="time" [(ngModel)]="horaInicio">
         </div>
       </div>
       <!-- Duração -->
@@ -124,11 +124,11 @@
           Definir data e hora de fim
         </label>
       </div>
-      <div class="input-field" *ngIf="showInformarFim && apontamentoIniciado">
+      <div class="input-field" *ngIf="showInformarFim && apontamentoIniciado || apontamentoFinalizado">
         <label>Fim</label>
         <div class="input-inline">
-          <input type="date" [(ngModel)]="dataFim">
-          <input type="time" [(ngModel)]="horaFim">
+          <input [disabled]="apontamentoFinalizado" type="date" [(ngModel)]="dataFim">
+          <input [disabled]="apontamentoFinalizado" type="time" [(ngModel)]="horaFim">
         </div>
       </div>
   
