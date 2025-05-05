@@ -138,6 +138,19 @@ select {
 
 .button {
   padding: 20px;
+  
+}
+
+.button-apontar {
+  padding: 20px;
+  background-color: #4CAF50;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+
 }
 
 .button-large {
@@ -218,6 +231,7 @@ select {
 .icon,
 .icon-button {
   background-color: #ddd;
+  width: fit-content;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 8px;

@@ -19,6 +19,7 @@ export class ApontamentoComponent {
   operador = '';
   item = '';
   quantidadeApontada: number = 0;
+  quantidadeApontadaTotal: number = 0;
   duplaChecagem: number = 0;
   quantidadeTotalDuplaChecagem: number = 0;
   dataInicio: string = '';
@@ -35,8 +36,8 @@ export class ApontamentoComponent {
   showDuplaChecagemModal: boolean = false;
   showInformarInicio: boolean = false;
   showInformarFim: boolean = false;
-  showQtProdNessaOperacao: boolean = false;
-  showAdicionarProd: boolean = false;
+  showQtProdNessaOperacao: boolean = true;
+  showAdicionarProd: boolean = true;
   valorAdicionarProd: number = 1;
 
   apontamentoIniciado: boolean = false;
@@ -177,9 +178,10 @@ duracaoManual = '00:00:00';
 
   adicionarQtProd() {
     const valor = Number(this.valorAdicionarProd) || 0;
-    const atual = Number(this.quantidadeApontada) || 0;
-    this.quantidadeApontada = atual + valor;
+    const atual = Number(this.quantidadeApontadaTotal) || 0;
+    this.quantidadeApontadaTotal = atual + valor;
   }
+
   
   novoApontamento() {
     this.apontamentoFinalizado = false;
@@ -214,13 +216,14 @@ duracaoManual = '00:00:00';
 
   reiniciar() {
     this.apontamentoFinalizado = false;
-    this.apontamentoIniciado = false;
+    this.apontamentoIniciado = true;
     this.showInformarInicio = false;
     this.showInformarFim = false;
   
-    // Limpar início e fim
-    this.dataInicio = '';
-    this.horaInicio = '';
+    // Limpar fim e reiniciar início
+    const agora = new Date();
+    this.dataInicio = agora.toISOString().substring(0, 10);
+    this.horaInicio = agora.toTimeString().substring(0, 8);
     this.dataFim = '';
     this.horaFim = '';
   
@@ -234,6 +237,8 @@ duracaoManual = '00:00:00';
       clearInterval(this.intervalo);
       this.cronometroAtivo = false;
     }
+    //Iniciar cronômetro
+    this.alternarCronometro();
   
     // Outras flags opcionais
     this.operacaoFinalizada = false;
@@ -375,14 +380,9 @@ definirInicioEFim() {
   this.horaInicio = inicio.toTimeString().substring(0, 8);
 }
 
-
-//quantidadeApontada: number = 0;
-quantidadeAInserir: number = 0;
-
 apontarQuantidade() {
-  const inserir = this.quantidadeAInserir || 0;
-  this.quantidadeApontada = (this.quantidadeApontada || 0) + inserir;
-  this.quantidadeAInserir = 0;
+  this.quantidadeApontadaTotal = this.quantidadeApontadaTotal + this.quantidadeApontada;
+  this.quantidadeApontada = 0;
 }
 
 }
