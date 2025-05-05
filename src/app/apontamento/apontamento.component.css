@@ -168,6 +168,18 @@ select {
   background-color: #3f84df;
 }
 
+.icon-button.green {
+  background-color: #4CAF50 !important;
+  color: white;
+  min-width: 60px;
+  padding: 10px 16px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+
+
 /* === MODAL === */
 .modal {
   display: flex;
