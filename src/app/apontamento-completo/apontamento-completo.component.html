@@ -252,10 +252,10 @@
             <label>Usar turno.</label>
             <input type="checkbox" [(ngModel)]="usaTurno">
           </div>
-          <div class="config-switch">
+          <!--<div class="config-switch">
             <label>Mostrar início e fim.</label>
             <input type="checkbox" [(ngModel)]="mostrarInicioFim">
-          </div>
+          </div>-->
           <div class="config-switch">
             <label>Usar motivo de parada.</label>
             <input type="checkbox" [(ngModel)]="usaParada">
@@ -264,7 +264,7 @@
             <label>Usar dupla checagem.</label>
             <input type="checkbox" [(ngModel)]="usaDuplaChecagem">
           </div>
-          <div class="config-switch">
+          <!--<div class="config-switch">
             <label>Mostrar qt produzida nessa operação.</label>
             <input type="checkbox" [(ngModel)]="showQtProdNessaOperacao">
           </div>
@@ -276,7 +276,7 @@
           <div class="config-switch" *ngIf="showAdicionarProd">
             <label>Valor do botão adicionar quantidade</label>
             <input type="number" [(ngModel)]="valorAdicionarProd">
-          </div>
+          </div>-->
           <button class="button-large gray" (click)="fecharConfig()">Fechar</button>
         </div>
       </div>
