@@ -216,8 +216,6 @@ duracaoManual = '00:00:00';
   reiniciar() {
     this.apontamentoFinalizado = false;
     this.apontamentoIniciado = false;
-    this.showInformarInicio = false;
-    this.showInformarFim = false;
   
     // Limpar quantidades (exceto qt planejada)
     this.quantidadeApontada = 0;
