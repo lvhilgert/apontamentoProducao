@@ -219,12 +219,6 @@ duracaoManual = '00:00:00';
     this.showInformarInicio = false;
     this.showInformarFim = false;
   
-    // Limpar início e fim
-    this.dataInicio = '';
-    this.horaInicio = '';
-    this.dataFim = '';
-    this.horaFim = '';
-  
     // Limpar quantidades (exceto qt planejada)
     this.quantidadeApontada = 0;
     this.duplaChecagem = 0;
