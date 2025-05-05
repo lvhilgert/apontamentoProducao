@@ -4,13 +4,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-apontamento',
-  templateUrl: './apontamento.component.html',
+  selector: 'app-apontamento-completo',
+  templateUrl: './apontamento-completo.component.html',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  styleUrls: ['./apontamento.component.css']
+  styleUrls: ['./apontamento-completo.component.css']
 })
-export class ApontamentoComponent {
+
+export class ApontamentoCompletoComponent {
   criarNovaOrdem = false;
   ordemProducao = '';
   operacao: string = '';
