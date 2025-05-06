@@ -122,18 +122,35 @@ select {
 }
 
 .button-row {
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.button-large {
+  display: inline-flex; /* ou flex, se quiser alinhar conteúdo interno */
+  width: auto; /* ou defina uma largura fixa como 200px */
+  min-width: 180px;
+  justify-content: CENTER;
+  align-items: CENTER;
+  padding: 16px;
+  font-size: 18px;
+  border-radius: 8px;
+  margin: 10px 0;
 }
 
 .button,
-.tag-button,
-.button-large {
+.tag-button {
   font-weight: bold;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   color: white;
   font-size: 16px;
+  min-width: 180px;
+  text-align: center;
 }
 
 .button {
@@ -153,14 +170,6 @@ select {
 
 }
 
-.button-large {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  margin: 10px 0;
-  font-size: 18px;
-  border-radius: 8px;
-}
 
 .button-large:hover {
   opacity: 0.9;
@@ -168,9 +177,10 @@ select {
 
 /* Cores dos botões */
 .green { background-color: #4CAF50; }
+.yellow { background-color: #ffde06; }
 .red   { background-color: #f44336; }
 .blue  { background-color: #3f84df; }
-.gray  { background-color: #b6b6b6; color: rgb(255, 255, 255); }
+.gray  { background-color: #b6b6b6; }
 
 .button-large.red { background-color: #f44336; }
 .button-large.gray { background-color: #b6b6b6; }

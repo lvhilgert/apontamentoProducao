@@ -195,16 +195,6 @@
   
 
   <!-- PARADAS -->
-  <div class="section" *ngIf="apontamentoIniciado && !usaParada && !apontamentoFinalizado">
-    <div class="config-switch">
-      <label class="switch">
-        <input type="checkbox" [(ngModel)]="concluirOperacao">
-        <span class="slider round"></span>
-        Concluir operação
-      </label>
-    </div>
-  </div>
-  
 
   <div class="section" *ngIf="apontamentoIniciado && usaParada && apontamentoFinalizado">
     <label>Parado em: 🍝 Pausa para almoço</label>
@@ -218,7 +208,7 @@
           type="button"
           [class.selected]="motivoDeParada === 'ALM'" 
           (click)="pausar()">
-          ⏸ 🍝 Pausa para almoço
+          🍝 Pausa para almoço
         </button>
   
         <button 
@@ -226,7 +216,7 @@
           type="button"
           [class.selected]="motivoDeParada === 'EXP'" 
           (click)="pausar()">
-          ⏸ Término do expediente
+          Término do expediente
         </button>
   
         <button 
@@ -234,7 +224,7 @@
           type="button"
           [class.selected]="motivoDeParada === 'FIM_ET'" 
           (click)="pausar()">
-          ⏸ Fim desta ET na operação
+          Fim desta ET na operação
         </button>
   
         <button 
@@ -242,7 +232,7 @@
           type="button"
           [class.selected]="motivoDeParada === 'FIM_OP'" 
           (click)="fimDaOperacao()">
-          ⏹ Fim da operação
+          Fim da operação
         </button>
   
         <button 
@@ -250,7 +240,7 @@
           type="button"
           [class.selected]="motivoDeParada === 'OUT'" 
           (click)="pausar()">
-          ⏸ Outros motivos
+          Outros motivos
         </button>
       </div>
     </div>
@@ -260,11 +250,12 @@
     <!-- Botões finais -->
     <div class="button-row">
         <button class="button-large blue" *ngIf="!apontamentoIniciado" (click)="iniciar()">▶️ INICIAR</button>
-        <button class="button-large red" *ngIf="apontamentoIniciado && !apontamentoFinalizado && !usaParada" (click)="pausar()">⏹ PARAR</button>
+        <button class="button-large yellow" *ngIf="apontamentoIniciado && !apontamentoFinalizado && !usaParada" (click)="pausar()">⏸ PARAR</button>
+        <button class="button-large red" *ngIf="apontamentoIniciado && !apontamentoFinalizado" (click)="fimDaOperacao()">⏹ FINALIZAR OPERAÇÃO</button>
         <button class="button-large blue" *ngIf="apontamentoFinalizado && !operacaoFinalizada" (click)="reiniciar()">REINICIAR</button>
         <button class="button-large green" *ngIf="apontamentoFinalizado" (click)="novoApontamento()">NOVO APONTAMENTO</button>
         <button class="button-large gray" (click)="cancelar()">CANCELAR</button>
-      </div>
+    </div>
       
   <!-- Modal Item -->
   <div class="modal" *ngIf="showItemModal">
