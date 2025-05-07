@@ -251,7 +251,7 @@
     <div class="button-row">
         <button class="button-large blue" *ngIf="!apontamentoIniciado" (click)="iniciar()">▶️ INICIAR</button>
         <button class="button-large yellow" *ngIf="apontamentoIniciado && !apontamentoFinalizado && !usaParada" (click)="pausar()">⏸ PARAR</button>
-        <button class="button-large red" *ngIf="apontamentoIniciado && !apontamentoFinalizado" (click)="fimDaOperacao()">⏹ FINALIZAR OPERAÇÃO</button>
+        <button class="button-large green" *ngIf="apontamentoIniciado && !apontamentoFinalizado" (click)="fimDaOperacao()">⏹ FINALIZAR OPERAÇÃO</button>
         <button class="button-large blue" *ngIf="apontamentoFinalizado && !operacaoFinalizada" (click)="reiniciar()">REINICIAR</button>
         <button class="button-large green" *ngIf="apontamentoFinalizado" (click)="novoApontamento()">NOVO APONTAMENTO</button>
         <button class="button-large gray" (click)="cancelar()">CANCELAR</button>
