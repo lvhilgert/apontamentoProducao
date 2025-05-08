@@ -21,6 +21,9 @@ export class InicialComponent {
   irParaApontamentoEstacao() {
     this.router.navigate(['/apontamento'], { queryParams: { tipo: 'estacao' } });
   }
+  irParaApontamentoCompleto() {
+    this.router.navigate(['/apontamento-completo']);
+  }
   irParaGridApontamento() {
     this.router.navigate(['/grid-apontamento']);
   }

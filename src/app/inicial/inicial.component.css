@@ -1,91 +1,66 @@
-.container-inicial {
-  display: flex;
-  flex-direction: column; /* <---- agora os filhos ficam empilhados */
+.grid-inicial {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 60px 20px;
   background-color: #f4f4f4;
-  gap: 20px; /* espaço entre as molduras */
+  max-width: 700px; /* limite de largura total */
+  margin: 0 auto;    /* centraliza horizontalmente */
 }
 
-  
-  .moldura {
-    border: 3px solid #3f84df;
-    padding: 40px;
-    border-radius: 12px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-  
-  .botao-apontar {
-    background-color: #4CAF50;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 20px 30px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;     /* ← garante centralização vertical */
-    justify-content: center; /* ← centraliza o conteúdo horizontalmente */
-    gap: 12px;
-    width: 340px;
-  }
-  
-  .botao-apontar svg {
-    width: 26px;
-    height: 26px;
-    vertical-align: middle;  /* ← corrige desalinhamento fino */
-    fill: white;
-    flex-shrink: 0;          /* evita encolhimento em telas pequenas */
-  }
-  
-  
-  .botao-apontar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .icon-text svg {
-    width: 28px;
-    height: 28px;
-    fill: white;
-  }
+.moldura {
+  border: 2px solid #3f84df;
+  border-radius: 12px;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  width: 320px; /* <- define o tamanho da moldura */
+}
 
-  .moldura {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid #3f84df;
-    padding: 40px;
-    border-radius: 12px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  /* Cores dos botões */
+
+.botao-apontar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 10px;
+  width: 280px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.botao-apontar svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  flex-shrink: 0;
+}
+
+.botao-apontar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Cores dos botões + hover */
 .green { background-color: #4CAF50; }
+.green:hover { background-color: #388e3c; }
+
+.blue { background-color: #3f84df; }
+.blue:hover { background-color: #336fc9; }
+
+.gray { background-color: #b6b6b6; }
+.gray:hover { background-color: #999999; }
+
 .yellow { background-color: #e78b0b; }
-.red   { background-color: #f44336; }
-.blue  { background-color: #3f84df; }
-.gray  { background-color: #b6b6b6; }
-
-.botao-apontar.green:hover {
-  background-color: #45a049;
-}
-
-.botao-apontar.blue:hover {
-  background-color: #336fc9;
-}
-
-.botao-apontar.gray:hover {
-  background-color: #999999;
-}
-
-.botao-apontar.yellow:hover {
-  background-color: #d67a00;
-}
+.yellow:hover { background-color: #d67a00; }
