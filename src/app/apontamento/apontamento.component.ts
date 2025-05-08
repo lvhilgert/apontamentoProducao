@@ -12,6 +12,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./apontamento.component.css']
 })
 export class ApontamentoComponent {
+  
+
   criarNovaOrdem = false;
   ordemProducao = '';
   operacao: string = '';
@@ -76,7 +78,10 @@ export class ApontamentoComponent {
     { codigo: '002', descricao: 'Sacola reciclável 25x35cm' },
     { codigo: '003', descricao: 'Sacola grande 30x40cm' }
   ];
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
   
   ngOnInit() {
     const hoje = new Date().toISOString().substring(0, 10);
@@ -254,7 +259,7 @@ export class ApontamentoComponent {
   }
 
   cancelar() {
-    window.location.reload();
+    this.router.navigate(['/grid-apontamento']);
   }
   
   openOPModal() {

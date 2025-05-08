@@ -46,7 +46,6 @@
   
   
   .botao-apontar:hover {
-    background-color: #45a049;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
@@ -70,7 +69,23 @@
   
   /* Cores dos botões */
 .green { background-color: #4CAF50; }
-.yellow { background-color: #bca824; }
+.yellow { background-color: #e78b0b; }
 .red   { background-color: #f44336; }
 .blue  { background-color: #3f84df; }
 .gray  { background-color: #b6b6b6; }
+
+.botao-apontar.green:hover {
+  background-color: #45a049;
+}
+
+.botao-apontar.blue:hover {
+  background-color: #336fc9;
+}
+
+.botao-apontar.gray:hover {
+  background-color: #999999;
+}
+
+.botao-apontar.yellow:hover {
+  background-color: #d67a00;
+}
