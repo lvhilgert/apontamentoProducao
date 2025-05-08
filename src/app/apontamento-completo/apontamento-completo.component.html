@@ -53,8 +53,8 @@
 
 
   <!-- Linha: Ordem de Produção + Operação -->
-<div class="section">   
-  <div class="row-inline" *ngIf="!criarNovaOrdem">
+<div class="section" *ngIf="!criarNovaOrdem">   
+  <div class="row-inline">
     
       <div class="input-field">
         <label for="ordemProducao">Ordem de produção</label>
@@ -93,15 +93,15 @@
   <!-- INÍCIO E FIM  -->
   <div class="section">
     <div class="row-inline">
-      <div class="config-switch">
+      <!--<div class="config-switch">
         <label class="switch">
           <input type="checkbox" [(ngModel)]="showInformarInicio">
           <span class="slider round"></span>
           Definir data e hora de início
         </label>
-      </div>
+      </div> -->
       <!-- Início -->
-      <div class="input-field" *ngIf="showInformarInicio">
+      <div class="input-field">
         <label>Início</label>
         <div class="input-inline">
           <input type="date" [(ngModel)]="dataInicio">
@@ -110,14 +110,14 @@
       </div>
   
       <!-- Fim -->
-      <div class="config-switch">
+      <!--<div class="config-switch">
         <label class="switch">
           <input type="checkbox" [(ngModel)]="showInformarFim">
           <span class="slider round"></span>
           Definir data e hora de fim
         </label>
-      </div>
-      <div class="input-field" *ngIf="showInformarFim">
+      </div>-->
+      <div class="input-field">
         <label>Fim</label>
         <div class="input-inline">
           <input type="date" [(ngModel)]="dataFim">
