@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-apontamento',
@@ -58,9 +59,12 @@ export class ApontamentoComponent {
 
   //Cronômetro:
   cronometroAtivo = false;
-tempoDecorrido = 0; // em segundos
-intervalo: any;
-duracaoManual = '00:00:00';
+  tempoDecorrido = 0; // em segundos
+  intervalo: any;
+  duracaoManual = '00:00:00';
+
+  //Tipo do apontamento:
+  tipoDoApontamento: string = '';
 
   quantidadeTotal = 0;
   leituras: number[] = [];
@@ -72,12 +76,17 @@ duracaoManual = '00:00:00';
     { codigo: '002', descricao: 'Sacola reciclável 25x35cm' },
     { codigo: '003', descricao: 'Sacola grande 30x40cm' }
   ];
-
+  constructor(private route: ActivatedRoute) {}
+  
   ngOnInit() {
     const hoje = new Date().toISOString().substring(0, 10);
     this.dataInicio = hoje;
     this.dataFim = hoje;
     this.atualizarHoras();
+    this.route.queryParams.subscribe((params: { [key: string]: any }) => {
+      const tipo = params['tipo'];
+      this.tipoDoApontamento = tipo || 'completo';
+    });
   }
 
   toggleInicioFim() {

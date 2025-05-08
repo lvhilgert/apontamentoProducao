@@ -1,6 +1,28 @@
 <div class="container-inicial">
-    <div class="moldura">
-      <button class="botao-apontar" (click)="irParaApontamento()">APONTAR</button>
-    </div>
+  <div class="moldura">
+    <button class="botao-apontar blue" (click)="irParaApontamentoOperador()">
+      <span class="icon-text">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ffffff"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
+        Apontamento de operador
+      </span>
+    </button>
   </div>
-  
+
+  <div class="moldura">
+    <button class="botao-apontar yellow" (click)="irParaApontamentoEstacao()">
+      <span class="icon-text">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ffffff"><path d="M159-120v-120h124L181-574q-27-15-44.5-44T119-680q0-50 35-85t85-35q39 0 69.5 22.5T351-720h128v-40q0-17 11.5-28.5T519-800q9 0 17.5 4t14.5 12l68-64q9-9 21.5-11.5T665-856l156 72q12 6 16.5 17.5T837-744q-6 12-17.5 15.5T797-730l-144-66-94 88v56l94 86 144-66q11-5 23-1t17 15q6 12 1 23t-17 17l-156 74q-12 6-24.5 3.5T619-512l-68-64q-6 6-14.5 11t-17.5 5q-17 0-28.5-11.5T479-600v-40H351q-3 8-6.5 15t-9.5 15l200 370h144v120H159Z"/></svg>
+        Apontamento de estação de trabalho
+      </span>
+    </button>
+  </div>
+
+  <div class="moldura">
+    <button class="botao-apontar gray" (click)="irParaGridApontamento()">
+      <span class="icon-text">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ffffff"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+        Consultar apontamentos
+      </span>
+    </button>
+  </div>
+</div>

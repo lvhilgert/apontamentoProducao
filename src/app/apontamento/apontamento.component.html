@@ -14,12 +14,14 @@
       </div>
 
   <!-- Item -->
-  <div class="input-field" *ngIf="usaCriarOp && criarNovaOrdem">
-    <label for="item">Item</label>
-      <div class="input-inline">
-          <input type="text" id="item" [(ngModel)]="item" placeholder="Digite o código do item">
-          <button type="button" class="icon-button" (click)="openItemModal()">🔍</button>
-      </div>
+  <div class="section" *ngIf="usaCriarOp && criarNovaOrdem">
+    <div class="input-field">
+      <label for="item">Item</label>
+        <div class="input-inline">
+            <input type="text" id="item" [(ngModel)]="item" placeholder="Digite o código do item">
+            <button type="button" class="icon-button" (click)="openItemModal()">🔍</button>
+        </div>
+    </div>
   </div>
 
   
@@ -27,7 +29,7 @@
   <div class="section">
   <div class="row-inline">
     
-    <div class="input-field">
+    <div class="input-field" *ngIf="tipoDoApontamento == 'operador'">
       <label for="operador">Operador</label>
       <select [disabled]="apontamentoIniciado" id="operador" [(ngModel)]="operador">
         <option>João</option>
@@ -38,13 +40,24 @@
       </select>
     </div>
   
-    <div class="input-field">
+    <div class="input-field" *ngIf="tipoDoApontamento == 'estacao'">
       <label for="estacaoDeTrabalho">Estação de trabalho</label>
       <select [disabled]="apontamentoIniciado" id="estacaoDeTrabalho" [(ngModel)]="estacaoDeTrabalho">
         <option>MAQ1</option>
         <option>MAQ2</option>
         <option>MAQ3</option>
         <option>MAQ4</option>
+      </select>
+    </div>
+
+    <div class="input-field" *ngIf="tipoDoApontamento == 'estacao'">
+      <label for="operador">Operador (info)</label>
+      <select [disabled]="apontamentoIniciado" id="operador" [(ngModel)]="operador">
+        <option>João</option>
+        <option>Maria</option>
+        <option>Carlos</option>
+        <option>Ana</option>
+        <option>Lucas</option>
       </select>
     </div>
   

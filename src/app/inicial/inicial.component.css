@@ -1,10 +1,13 @@
 .container-inicial {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-  }
+  display: flex;
+  flex-direction: column; /* <---- agora os filhos ficam empilhados */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  gap: 20px; /* espaço entre as molduras */
+}
+
   
   .moldura {
     border: 3px solid #3f84df;
@@ -18,16 +21,56 @@
   .botao-apontar {
     background-color: #4CAF50;
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    padding: 20px 40px;
+    padding: 20px 30px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;     /* ← garante centralização vertical */
+    justify-content: center; /* ← centraliza o conteúdo horizontalmente */
+    gap: 12px;
+    width: 340px;
   }
+  
+  .botao-apontar svg {
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;  /* ← corrige desalinhamento fino */
+    fill: white;
+    flex-shrink: 0;          /* evita encolhimento em telas pequenas */
+  }
+  
   
   .botao-apontar:hover {
     background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
   
+  .icon-text svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+  }
+
+  .moldura {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #3f84df;
+    padding: 40px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Cores dos botões */
+.green { background-color: #4CAF50; }
+.yellow { background-color: #bca824; }
+.red   { background-color: #f44336; }
+.blue  { background-color: #3f84df; }
+.gray  { background-color: #b6b6b6; }

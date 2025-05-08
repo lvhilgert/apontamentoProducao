@@ -15,8 +15,15 @@ export class InicialComponent {
 
   constructor(private router: Router) {}
 
-  irParaApontamento() {
-    this.router.navigate(['/apontamento']);
+  irParaApontamentoOperador() {
+    this.router.navigate(['/apontamento'], { queryParams: { tipo: 'operador' } });
   }
+  irParaApontamentoEstacao() {
+    this.router.navigate(['/apontamento'], { queryParams: { tipo: 'estacao' } });
+  }
+  irParaGridApontamento() {
+    this.router.navigate(['/grid-apontamento']);
+  }
+  
 
 }
