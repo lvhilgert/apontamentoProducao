@@ -259,7 +259,7 @@ export class ApontamentoComponent {
   }
 
   cancelar() {
-    this.router.navigate(['/grid-apontamento']);
+    this.router.navigate(['/inicial']);
   }
   
   openOPModal() {
