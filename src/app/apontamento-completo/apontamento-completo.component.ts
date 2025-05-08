@@ -73,6 +73,8 @@ duracaoManual = '00:00:00';
     { codigo: '003', descricao: 'Sacola grande 30x40cm' }
   ];
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     const hoje = new Date().toISOString().substring(0, 10);
     this.dataInicio = hoje;
@@ -108,7 +110,9 @@ duracaoManual = '00:00:00';
       this.horaFim = '23:00:00';
     }
   }
-
+  salvar(){
+    //
+  }
   iniciar() {
     if (!this.showInformarInicio) {
       const agora = new Date();
@@ -233,7 +237,7 @@ duracaoManual = '00:00:00';
   }
 
   cancelar() {
-    window.location.reload();
+    this.router.navigate(['/inicial']);
   }
   
   openOPModal() {

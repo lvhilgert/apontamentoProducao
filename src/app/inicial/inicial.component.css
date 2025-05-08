@@ -1,66 +1,68 @@
-.grid-inicial {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pagina-inicial {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
-  background-color: #f4f4f4;
-  max-width: 700px; /* limite de largura total */
-  margin: 0 auto;    /* centraliza horizontalmente */
+}
+
+.grid-inicial {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 30px;
 }
 
 .moldura {
   border: 2px solid #3f84df;
   border-radius: 12px;
-  background-color: white;
   padding: 20px;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
-  width: 320px; /* <- define o tamanho da moldura */
 }
 
-
 .botao-apontar {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 18px 26px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  font-size: 18px;
-  font-weight: bold;
+  gap: 10px;
   color: white;
-  padding: 16px 24px;
-  border: none;
-  border-radius: 10px;
-  width: 280px;
-  cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  width: 270px;
+  text-align: center;
 }
 
 .botao-apontar svg {
+  flex-shrink: 0;
   width: 24px;
   height: 24px;
   fill: white;
-  flex-shrink: 0;
 }
 
-.botao-apontar:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
+/* Cores dos botões */
+.botao-apontar.green { background-color: #4CAF50; }
+.botao-apontar.green:hover { background-color: #45a049; }
 
-/* Cores dos botões + hover */
-.green { background-color: #4CAF50; }
-.green:hover { background-color: #388e3c; }
+.botao-apontar.blue { background-color: #3f84df; }
+.botao-apontar.blue:hover { background-color: #336fc9; }
 
-.blue { background-color: #3f84df; }
-.blue:hover { background-color: #336fc9; }
+.botao-apontar.gray { background-color: #b6b6b6; }
+.botao-apontar.gray:hover { background-color: #999999; }
 
-.gray { background-color: #b6b6b6; }
-.gray:hover { background-color: #999999; }
-
-.yellow { background-color: #e78b0b; }
-.yellow:hover { background-color: #d67a00; }
+.botao-apontar.yellow { background-color: #e78b0b; }
+.botao-apontar.yellow:hover { background-color: #d67a00; }
