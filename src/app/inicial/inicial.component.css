@@ -55,14 +55,18 @@ body {
 }
 
 /* Cores dos botões */
-.botao-apontar.green { background-color: #4CAF50; }
-.botao-apontar.green:hover { background-color: #45a049; }
+.botao-apontar.green { background-color: #2A7D08; }
+.botao-apontar.green:hover { background-color: #226707; }
 
-.botao-apontar.blue { background-color: #3f84df; }
-.botao-apontar.blue:hover { background-color: #336fc9; }
+.botao-apontar.blue { background-color: #023A6A; }
+.botao-apontar.blue:hover { background-color: #022a4e; }
 
 .botao-apontar.gray { background-color: #b6b6b6; }
 .botao-apontar.gray:hover { background-color: #999999; }
 
-.botao-apontar.yellow { background-color: #e78b0b; }
-.botao-apontar.yellow:hover { background-color: #d67a00; }
+.botao-apontar.yellow { background-color: #D39914; }
+.botao-apontar.yellow:hover { background-color: #bf8c15; }
+
+.botao-apontar.red { background-color: #B70000; }
+.botao-apontar.red:hover { background-color: #880303; }
+

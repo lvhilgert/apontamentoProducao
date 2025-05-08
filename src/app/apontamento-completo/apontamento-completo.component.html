@@ -190,7 +190,7 @@
   
 
   <!-- PARADAS -->
-  <div class="section" *ngIf="usaParada">
+  <div class="section">
     <div class="input-field">
         <div class="input-inline">
           <div *ngIf="usaParada" class="motivo-parada">
@@ -203,9 +203,19 @@
               <option value="OUT">⏸ Outros motivos</option>
             </select>
           </div>
+          
+        </div>
+        <div class="config-switch">
+          <label class="switch">
+            <input type="checkbox" [(ngModel)]="showInformarFim">
+            <span class="slider round"></span>
+            Finalizar operação
+          </label>
         </div>
       </div>
   </div>
+
+  
   
   
     <!-- Botões finais -->
