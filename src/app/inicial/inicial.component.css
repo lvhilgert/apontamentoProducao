@@ -9,9 +9,25 @@ body {
   min-height: 100vh;
   background-color: #f4f4f4;
   display: flex;
+  flex-direction: column; /* ← ESSENCIAL */
   justify-content: center;
   align-items: center;
+  gap: 30px; /* espaço entre o grid e o botão cinza */
 }
+
+
+.botao-consultar-container {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.botao-consultar {
+  width: 718px;
+}
+
+
 
 .grid-inicial {
   display: grid;
