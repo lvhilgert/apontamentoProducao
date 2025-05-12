@@ -130,13 +130,14 @@ select {
 }
 
 .button-large {
-  display: inline-flex; /* ou flex, se quiser alinhar conteúdo interno */
-  width: auto; /* ou defina uma largura fixa como 200px */
+  display: inline-flex; 
+  width: auto; 
   min-width: 180px;
   justify-content: CENTER;
   align-items: CENTER;
   padding: 16px;
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: bolder;
   border-radius: 8px;
   margin: 10px 0;
 }
@@ -179,7 +180,7 @@ select {
 .green { background-color: #4CAF50; }
 .yellow { background-color: #ffde06; }
 .red   { background-color: #f44336; }
-.blue  { background-color: #3f84df; }
+.blue  { background-color: #3f84df; color: antiquewhite;}
 .gray  { background-color: #b6b6b6; }
 
 .button-large.red { background-color: #f44336; }
