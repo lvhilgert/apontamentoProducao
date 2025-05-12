@@ -177,15 +177,15 @@ select {
 }
 
 /* Cores dos botões */
-.green { background-color: #4CAF50; }
-.yellow { background-color: #ffde06; }
-.red   { background-color: #f44336; }
-.blue  { background-color: #3f84df; color: antiquewhite;}
-.gray  { background-color: #b6b6b6; }
+.green { background-color: #4CAF50; color: rgb(255, 255, 255);}
+.yellow { background-color: #ffde06; color: rgb(255, 255, 255);}
+.red   { background-color: #f44336; color: rgb(255, 255, 255);}
+.blue  { background-color: #3f84df; color: rgb(255, 255, 255);}
+.gray  { background-color: #979797; }
 
-.button-large.red { background-color: #f44336; }
-.button-large.gray { background-color: #b6b6b6; }
-.button-large.blue { background-color: #3f84df; }
+.button-large.red { background-color: #f44336; color: rgb(255, 255, 255);}
+.button-large.gray { background-color: #979797; color: rgb(255, 255, 255);}
+.button-large.blue { background-color: #3f84df; color: rgb(255, 255, 255);}
 
 .tag-button {
   padding: 10px 15px;
