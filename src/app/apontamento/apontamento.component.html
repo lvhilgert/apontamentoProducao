@@ -274,7 +274,14 @@
         <button class="button-large green" *ngIf="apontamentoIniciado && !apontamentoFinalizado" (click)="fimDaOperacao()">⏹ Finalizar operação</button>
         <button class="button-large blue" *ngIf="apontamentoFinalizado && !operacaoFinalizada" (click)="reiniciar()">Reiniciar</button>
         <button class="button-large green" *ngIf="apontamentoFinalizado" (click)="novoApontamento()">Novo apontamento</button>
-        <button class="button-large gray" (click)="cancelar()">Cancelar</button>
+        <button class="button-large gray" (click)="cancelar()">
+          <span class="icon-text">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ffffff" width="26" height="26">
+              <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+            Cancelar
+          </span>
+        </button>
     </div>
       
   <!-- Modal Item -->
