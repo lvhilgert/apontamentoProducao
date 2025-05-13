@@ -369,3 +369,30 @@ input:checked + .slider::before {
   font-size: 24px;
   cursor: pointer;
 }
+
+.botao-finalizacao-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linha-parada-finalizar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.botao-finalizar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+
+.cancelar-direita {
+  display: flex;
+  justify-content: flex-end;
+}

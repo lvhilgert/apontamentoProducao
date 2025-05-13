@@ -190,29 +190,56 @@
   
 
   <!-- PARADAS -->
-  <div class="section">
-    <div class="input-field">
-        <div class="input-inline">
-          <div *ngIf="usaParada" class="motivo-parada">
-            <label for="motivoDeParada">Motivo de parada</label>
-            <select id="motivoDeParada" [(ngModel)]="motivoDeParada">
-              <option value="ALM">⏸ Pausa para almoço</option>
-              <option value="EXP">⏸ Término do expediente</option>
-              <option value="FIM_ET">⏸ Fim desta ET na operação</option>
-              <option value="FIM_OP">⏹ Fim da operação</option>
-              <option value="OUT">⏸ Outros motivos</option>
-            </select>
-          </div>
-          
-        </div>
-        <div class="config-switch">
-          <label class="switch">
-            <input type="checkbox" [(ngModel)]="showInformarFim">
-            <span class="slider round"></span>
-            Finalizar operação
-          </label>
+
+  <div class="section" *ngIf="usaParada">
+    <div class="row-inline">
+      <div class="input-field">
+        <label>Motivos de parada</label>
+        <div class="button-group">
+          <button 
+            class="button blue" 
+            type="button"
+            [class.selected]="motivoDeParada === 'ALM'" 
+            (click)="pausar()">
+            🍝 Pausa para almoço
+          </button>
+    
+          <button 
+            class="button blue" 
+            type="button"
+            [class.selected]="motivoDeParada === 'EXP'" 
+            (click)="pausar()">
+            Término do expediente
+          </button>
+    
+          <button 
+            class="button blue" 
+            type="button"
+            [class.selected]="motivoDeParada === 'FIM_ET'" 
+            (click)="pausar()">
+            Fim desta ET na operação
+          </button>
+    
+          <button 
+            class="button blue" 
+            type="button"
+            [class.selected]="motivoDeParada === 'FIM_OP'" 
+            (click)="fimDaOperacao()">
+            Fim da operação
+          </button>
+    
+          <button 
+            class="button blue" 
+            type="button"
+            [class.selected]="motivoDeParada === 'OUT'" 
+            (click)="pausar()">
+            Outros motivos
+          </button>
         </div>
       </div>
+      <button class="button-large green" *ngIf="apontamentoIniciado && !apontamentoFinalizado" (click)="fimDaOperacao()">⏹ Finalizar operação</button>
+    </div>
+    
   </div>
 
   

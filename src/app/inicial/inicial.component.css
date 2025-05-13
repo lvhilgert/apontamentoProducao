@@ -41,8 +41,8 @@ body {
 }
 
 .titulo {
-  padding-left: 140px;
-  padding-right: 140px;
+  padding-left: 120px;
+  padding-right: 120px;
   padding-bottom: 0px;
   padding-top: 0px;
 
@@ -101,3 +101,35 @@ body {
 }
 .botao-apontar.red:hover { background-color: #880303; }
 
+.settings-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between; /* <-- novo */
+  align-items: center;
+  width: 100%; /* <-- novo */
+}
+
+
+
+.titulo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.titulo-texto {
+  flex-grow: 1;
+}
+
+.engrenagem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

@@ -208,57 +208,45 @@
   
   
 
-  <!-- PARADAS -->
+  <!-- Botões finais -->
+<div class="botao-finalizacao-container">
 
-  <div class="section" *ngIf="apontamentoIniciado && usaParada && apontamentoFinalizado">
-    <label>Parado em: 🍝 Pausa para almoço</label>
-  </div> 
-  <div class="section" *ngIf="apontamentoIniciado && usaParada && !apontamentoFinalizado">
-    <div class="input-field">
-      <label>Motivos de parada</label>
-      <div class="button-group">
-        <button 
-          class="button blue" 
-          type="button"
-          [class.selected]="motivoDeParada === 'ALM'" 
-          (click)="pausar()">
-          🍝 Pausa para almoço
-        </button>
-  
-        <button 
-          class="button blue" 
-          type="button"
-          [class.selected]="motivoDeParada === 'EXP'" 
-          (click)="pausar()">
-          Término do expediente
-        </button>
-  
-        <button 
-          class="button blue" 
-          type="button"
-          [class.selected]="motivoDeParada === 'FIM_ET'" 
-          (click)="pausar()">
-          Fim desta ET na operação
-        </button>
-  
-        <button 
-          class="button blue" 
-          type="button"
-          [class.selected]="motivoDeParada === 'FIM_OP'" 
-          (click)="fimDaOperacao()">
-          Fim da operação
-        </button>
-  
-        <button 
-          class="button blue" 
-          type="button"
-          [class.selected]="motivoDeParada === 'OUT'" 
-          (click)="pausar()">
-          Outros motivos
-        </button>
-      </div>
+  <div class="linha-parada-finalizar">
+    <!-- Grupo de botões de parada -->
+    <div class="button-group" *ngIf="apontamentoIniciado && usaParada && !apontamentoFinalizado">
+      <button class="button blue" type="button" [class.selected]="motivoDeParada === 'ALM'" (click)="pausar()">
+        🍝 Pausa para almoço
+      </button>
+      <button class="button blue" type="button" [class.selected]="motivoDeParada === 'EXP'" (click)="pausar()">
+        Término do expediente
+      </button>
+      <button class="button blue" type="button" [class.selected]="motivoDeParada === 'FIM_ET'" (click)="pausar()">
+        Fim desta ET na operação
+      </button>
+      <button class="button blue" type="button" [class.selected]="motivoDeParada === 'OUT'" (click)="pausar()">
+        Outros motivos
+      </button>
+    </div>
+
+    <!-- Botão Finalizar -->
+    <div class="botao-finalizar" *ngIf="apontamentoIniciado && !apontamentoFinalizado">
+      <button class="button-large green" (click)="fimDaOperacao()">⏹ Finalizar operação</button>
     </div>
   </div>
+
+  <!-- Botão Cancelar -->
+  <div class="cancelar-direita" *ngIf="apontamentoIniciado">
+    <button class="button-large gray" (click)="cancelar()">
+      <span class="icon-text">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ffffff" width="26" height="26">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+        </svg>
+        Cancelar
+      </span>
+    </button>
+  </div>
+
+</div>
   
   
     <!-- Botões finais -->
@@ -271,11 +259,9 @@
             Iniciar
           </span>
         </button>
-        <button class="button-large yellow" *ngIf="apontamentoIniciado && !apontamentoFinalizado && !usaParada" (click)="pausar()">⏸ Parar</button>
-        <button class="button-large green" *ngIf="apontamentoIniciado && !apontamentoFinalizado" (click)="fimDaOperacao()">⏹ Finalizar operação</button>
         <button class="button-large blue" *ngIf="apontamentoFinalizado && !operacaoFinalizada" (click)="reiniciar()">Reiniciar</button>
         <button class="button-large green" *ngIf="apontamentoFinalizado" (click)="novoApontamento()">Novo apontamento</button>
-        <button class="button-large gray" (click)="cancelar()">
+        <button class="button-large gray" *ngIf="!apontamentoIniciado" (click)="cancelar()">
           <span class="icon-text">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ffffff" width="26" height="26">
               <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
