@@ -210,24 +210,28 @@
 
   <!-- Botões finais -->
 <div class="botao-finalizacao-container">
-
-  <div class="linha-parada-finalizar">
-    <!-- Grupo de botões de parada -->
-    <div class="button-group" *ngIf="apontamentoIniciado && usaParada && !apontamentoFinalizado">
-      <button class="button blue" type="button" [class.selected]="motivoDeParada === 'ALM'" (click)="pausar()">
-        🍝 Pausa para almoço
-      </button>
-      <button class="button blue" type="button" [class.selected]="motivoDeParada === 'EXP'" (click)="pausar()">
-        Término do expediente
-      </button>
-      <button class="button blue" type="button" [class.selected]="motivoDeParada === 'FIM_ET'" (click)="pausar()">
-        Fim desta ET na operação
-      </button>
-      <button class="button blue" type="button" [class.selected]="motivoDeParada === 'OUT'" (click)="pausar()">
-        Outros motivos
-      </button>
-    </div>
-
+  
+    <div class="linha-parada-finalizar">
+      <div class="section">
+      <!-- Grupo de botões de parada -->
+      <label>Parar</label>
+      <div class="button-group" *ngIf="apontamentoIniciado && usaParada && !apontamentoFinalizado">
+        <button class="button blue" type="button" [class.selected]="motivoDeParada === 'ALM'" (click)="pausar()">
+          🍝 Pausa para almoço
+        </button>
+        <button class="button blue" type="button" [class.selected]="motivoDeParada === 'EXP'" (click)="pausar()">
+          Término do expediente
+        </button>
+        <button class="button blue" type="button" [class.selected]="motivoDeParada === 'FIM_ET'" (click)="pausar()">
+          Fim desta ET na operação
+        </button>
+        <button class="button blue" type="button" [class.selected]="motivoDeParada === 'OUT'" (click)="pausar()">
+          Outros motivos
+        </button>
+      </div>
+      <br>
+  </div>
+  
     <!-- Botão Finalizar -->
     <div class="botao-finalizar" *ngIf="apontamentoIniciado && !apontamentoFinalizado">
       <button class="button-large green" (click)="fimDaOperacao()">⏹ Finalizar operação</button>
