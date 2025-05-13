@@ -16,12 +16,7 @@ body {
 }
 
 
-.botao-consultar-container {
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
+
 
 .botao-consultar {
   width: 718px;
@@ -52,6 +47,14 @@ body {
   padding-top: 0px;
 
 }
+
+.consultar {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
 .botao-apontar {
   font-size: 18px;
   font-weight: bold;
@@ -90,6 +93,11 @@ body {
 .botao-apontar.yellow { background-color: #D39914; }
 .botao-apontar.yellow:hover { background-color: #bf8c15; }
 
-.botao-apontar.red { background-color: #B70000; }
+.botao-apontar.red { background-color: #B70000;
+                      padding-left: 310px;
+                      padding-right: 310px;
+                      padding-bottom: 14px;
+                      padding-top: 14px;                  
+}
 .botao-apontar.red:hover { background-color: #880303; }
 
